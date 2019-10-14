@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Minecraft prueba</title>
+    
+</head>
+<body onmousemove="moverCubo()">
+    <input type="number" name="velocidad" value="0.3" id="velocidad">velocidad
+    <div class="contenedor" >
+        <div id="isla" >
+            <div id="suelo"></div>
+            <div id="arbol">
+                <div id="troncoder"></div>
+                <div id="troncofren"></div> <!--este es el de la izquierda, ese seria el frente-->
+                <div id="troncoatras"></div>
+                <div id="troncoiz"></div>
+                <div id="arbolabajo"></div>
+                <div id="arbolfrente"></div>
+                <div id="arbolderecha"></div>
+                <div id="arbolatras"></div>
+                <div id="arbolizquierda"></div>
+                <div id="arbolarriba"></div>
+            </div>
+            <div id="steve">
+                <div id="head">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div id="chest">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+
+                    <div id="brizq">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div id="brder">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                    </div>
+                </div>
+                <div id="piernaIzq">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div id="piernaDer">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+            </div>
+        </div>
+    </div>
+ <script>
+    function moverCubo() {
+    var velocidad = document.getElementById("velocidad").value;
+    //document.getElementById("isla").style.transform= 'rotateY('+event.clientX* velocidad+'deg) rotateX('+ -event.clientY * velocidad+'deg)'; 
+    //document.getElementById("isla").style.transform= 'rotateY('+event.clientX* velocidad+'deg)'; 
+
+
+
+}
+
+</script>
+</body>
+</html>
