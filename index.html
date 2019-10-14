@@ -9,7 +9,8 @@
     
 </head>
 <body onmousemove="moverCubo()">
-    <input type="number" name="velocidad" value="0.3" id="velocidad">velocidad
+    <input type="number" name="velocidad" value="1" id="velocidad">velocidad
+    <input type="checkbox" name="mouse" id="mouse">Activar mouse
     <div class="contenedor" >
         <div id="isla" >
             <div id="suelo"></div>
@@ -69,14 +70,20 @@
     </div>
  <script>
     function moverCubo() {
-    var velocidad = document.getElementById("velocidad").value;
-    //document.getElementById("isla").style.transform= 'rotateY('+event.clientX* velocidad+'deg) rotateX('+ -event.clientY * velocidad+'deg)'; 
-    //document.getElementById("isla").style.transform= 'rotateY('+event.clientX* velocidad+'deg)'; 
-
+        if(document.getElementById("mouse").checked){
+            var velocidad = document.getElementById("velocidad").value;
+            document.getElementById("isla").style.transform= 'rotateY('+event.clientX* velocidad+'deg) rotateX('+ -event.clientY * velocidad+'deg)'; 
+            document.getElementById("isla").style.animation = 'a';
+        }else{
+            document.getElementById("isla").style.animation = 'rotar 10s infinite linear';
+          
+        }
+   
 
 
 }
 
 </script>
+<div style="margin-top: 300px; width: 1000px; height: 100px;"></div>
 </body>
 </html>
