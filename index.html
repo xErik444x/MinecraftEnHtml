@@ -9,8 +9,12 @@
     
 </head>
 <body onmousemove="moverCubo()">
+ <div style="position: fixed; z-index: 1;">
+        <a href="https://github.com/xErik444x/MinecraftEnHtml" target="_blank"class="button">Ver codigo</a>  
     <input type="number" name="velocidad" value="1" id="velocidad">velocidad
-    <input type="checkbox" name="mouse" id="mouse">Activar mouse
+        <input type="checkbox" name="mouse" id="mouse">Activar mouse
+     
+ </div>
     <div class="contenedor" >
         <div id="isla" >
             <div id="suelo"></div>
@@ -69,8 +73,26 @@
         </div>
     </div>
  <script>
+     var mouseDown = 0;
+document.body.onmousedown = function() { 
+    mouseDown = 1;
+}
+document.body.onmouseup = function() {
+    mouseDown = 0;
+}
     function moverCubo() {
-        if(document.getElementById("mouse").checked){
+        if (mouseDown == 1) {
+            if(document.getElementById("mouse").checked){
+            var velocidad = document.getElementById("velocidad").value;
+            document.getElementById("isla").style.transform= 'rotateY('+event.clientX* velocidad+'deg) rotateZ('+ -event.clientY * velocidad+'deg)'; 
+            document.getElementById("isla").style.animation = 'a';
+        }else{
+            document.getElementById("isla").style.animation = 'rotar 10s infinite linear';
+          
+        }
+   }else{
+
+    if(document.getElementById("mouse").checked){
             var velocidad = document.getElementById("velocidad").value;
             document.getElementById("isla").style.transform= 'rotateY('+event.clientX* velocidad+'deg) rotateX('+ -event.clientY * velocidad+'deg)'; 
             document.getElementById("isla").style.animation = 'a';
@@ -79,6 +101,7 @@
           
         }
    
+}
 
 
 }
